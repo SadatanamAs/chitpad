@@ -1,68 +1,68 @@
 name: chitpad_app
-description: "chitpad — multi-user notepad app"
-publish_to: none
-version: 0.1.0+1
+description: "Chitpad — your thoughts, beautifully kept. A rich note-taking app with an interactive fox mascot."
+publish_to: 'none'
+
+version: 1.0.0+1
 
 environment:
-  sdk: ">=3.3.0 <4.0.0"
+  sdk: ^3.11.1
 
 dependencies:
   flutter:
     sdk: flutter
 
-  # ── State Management ──────────────────────────────────────
+  flutter_localizations:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+
+  # State management, navigation, DI
+  get: ^4.7.2
+
+  # Rich text editor
+  flutter_quill: ^11.1.0
+
+  # Google Fonts (Nunito, DM Mono)
+  google_fonts: ^6.2.1
+
+  # UUID generation for mock data
+  uuid: ^4.5.1
+
+  # HTTP client (for future API integration)
+  dio: ^5.7.0
+
+  # Secure token storage
+  flutter_secure_storage: ^9.2.4
+
+  # SVG support
+  flutter_svg: ^2.0.17
+
+  # Shimmer loading effects
+  shimmer: ^3.0.0
   flutter_riverpod: ^2.5.1
-  hooks_riverpod: ^2.5.1
-  flutter_hooks: ^0.20.5
-  riverpod_annotation: ^2.3.4
 
-  # ── Navigation (GetX — routing ONLY) ─────────────────────
-  # Rule: NEVER use GetX controllers, GetX state, or Get.find()
-  # ONLY use: Get.toNamed(), Get.back(), Get.offAllNamed()
-  get: ^4.6.6
-
-  # ── Networking ────────────────────────────────────────────
-  dio: ^5.4.3+1
-
-  # ── Models / Serialization ────────────────────────────────
-  freezed_annotation: ^2.4.1
-  json_annotation: ^4.9.0
-
-  # ── Local Storage ─────────────────────────────────────────
-  flutter_secure_storage: ^9.2.2  # JWT tokens — never SharedPrefs for auth
-  shared_preferences: ^2.3.1       # non-sensitive user preferences
-
-  # ── Environment Variables ─────────────────────────────────
-  envied: ^0.5.4+1
-
-  # ── Functional Error Handling ─────────────────────────────
-  fpdart: ^1.1.0  # Either<Failure, T> pattern — matches backend error model
-
-  # ── Utilities ─────────────────────────────────────────────
-  logger: ^2.3.0
-  connectivity_plus: ^6.0.3
-  intl: ^0.19.0
+  # Image picking for profile photos
+  image_picker: ^1.1.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  flutter_lints: ^4.0.0
-  build_runner: ^2.4.11
-  riverpod_generator: ^2.4.0
-  freezed: ^2.5.2
-  json_serializable: ^6.8.0
-  envied_generator: ^0.5.4+1
-  mocktail: ^1.0.4
+  flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.14.3
 
 flutter:
   uses-material-design: true
-  # TODO: Add assets after design decisions:
-  # assets:
-  #   - assets/images/
-  #   - assets/icons/
-  #   - assets/animations/
-  # fonts:
-  #   - family: YourFont
-  #     fonts:
-  #       - asset: assets/fonts/YourFont-Regular.ttf
+
+  assets:
+    - assets/fonts/
+    - assets/icon/
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon/app_icon.png"
+  adaptive_icon_background: "#3B3BE8"
+  adaptive_icon_foreground: "assets/icon/app_icon.png"
+  min_sdk_android: 21
+  remove_alpha_ios: true

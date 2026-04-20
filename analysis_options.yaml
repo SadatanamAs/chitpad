@@ -1,23 +1,7 @@
 include: package:flutter_lints/flutter.yaml
 
-analyzer:
-  errors:
-    invalid_annotation_target: ignore   # needed for freezed
-  exclude:
-    - "**/*.g.dart"
-    - "**/*.freezed.dart"
-    - "lib/core/env/env.g.dart"
-
 linter:
   rules:
-    # Style
-    prefer_single_quotes: true
-    always_declare_return_types: true
-    avoid_print: true                   # use AppLogger instead
-    prefer_const_constructors: true
-    prefer_const_declarations: true
-    # Architecture
-    avoid_dynamic_calls: true
-    cast_nullable_to_non_nullable: true
-    # Riverpod
-    prefer_final_fields: true
+    prefer_const_constructors: false
+    prefer_const_literals_to_create_immutables: false
+    avoid_print: false
