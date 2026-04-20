@@ -43,20 +43,3 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
-
-# ── Secrets ───────────────────────────────────────────────────
-.env
-.env.*
-!.env.example
-lib/core/env/env.g.dart    # generated — contains obfuscated secrets
-
-# ── Build outputs ─────────────────────────────────────────────
-*.g.dart
-*.freezed.dart
-/build/
-
-# ── IDE ───────────────────────────────────────────────────────
-.idea/
-.vscode/
-*.swp
-.DS_Store

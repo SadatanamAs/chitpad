@@ -1,6 +1,6 @@
 # chitpad_app
 
-chitpad — multi-user notepad app
+A new Flutter project.
 
 ## Getting Started
 

@@ -1,6 +1,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- For Android 13+ (API 33+): photos only -->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
+    <!-- For Android 12 and below -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32"/>
+    <!-- Camera for taking profile photos -->
+    <uses-permission android:name="android.permission.CAMERA"/>
+
     <application
-        android:label="chitpad_app"
+        android:label="Chitpad"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
